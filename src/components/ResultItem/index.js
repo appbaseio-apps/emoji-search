@@ -7,9 +7,15 @@ const ResultItem = ({
 }) => {
   return (
     <div className="result-item">
+      <h4>{label}</h4>
       <span id="emoji-wrapper" role="img" aria-label={label}>
         {emoji}
       </span>
+      <div className="tags">
+        {tags?.map((tag) => (
+          <span>{tag}</span>
+        ))}
+      </div>
     </div>
   );
 };

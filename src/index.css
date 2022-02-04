@@ -1,15 +1,14 @@
 * {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
-  font-family: Monaco monospace;
+  font-family: monospace;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+  font-size: 16px;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding: 1rem;
@@ -22,16 +21,51 @@ code {
     monospace;
 }
 
+.loader-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  background: white;
+  opacity: 0.85;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  font-size: 2rem;
+}
+
 div#root {
   height: 100%;
   width: 100%;
 }
 
 /* index.js */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.logo-wrapper img {
+  height: 40px;
+  position: relative;
+  top: 5px;
+}
+
+.link-wrapper a {
+  text-decoration: none;
+  font-size: 20px;
+}
+
 div.input-wrapper {
   position: relative;
   width: max-content;
   margin: 0 auto;
+  display: flex;
+  align-items: stretch;
 }
 
 div.input-wrapper input {
@@ -43,6 +77,46 @@ div.input-wrapper input {
   padding-left: 0.6rem;
 }
 
+div.input-wrapper #recommend-btn {
+  border: none;
+  background: #00800a;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+div.input-wrapper #recommend-btn:hover {
+  filter: brightness(110%);
+}
+
+div.input-wrapper #recommend-btn:active {
+  filter: brightness(120%);
+}
+
+div.input-wrapper #random-text-btn {
+  position: absolute;
+  top: 118%;
+  right: 0;
+  border: none;
+  padding: 5px 10px;
+  background: #7bbedf;
+  color: #121212;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 1px;
+  border-radius: 3px;
+}
+
+div.input-wrapper #random-text-btn:hover {
+  filter: brightness(110%);
+}
+
+div.input-wrapper #random-text-btn:active {
+  filter: brightness(120%);
+}
 /* ResultsRenderer.js */
 
 .results-renderer {
@@ -60,19 +134,50 @@ div.input-wrapper input {
 .result-item {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 200px;
-  height: 120px;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 250px;
+  height: 350px;
   background: #cdc2e3;
   box-shadow: -1px 0 8px #000;
   transition: all 450ms ease;
   cursor: pointer;
   margin: 1rem;
+  padding: 10px 5px;
 }
 
 .result-item:hover {
   box-shadow: -0.5rem 0.5rem 1rem #000;
   transform: translateY(-5px);
+}
+
+.result-item h4 {
+  width: 75%;
+  text-align: center;
+  text-transform: capitalize;
+  overflow: hidden;
+}
+.result-item .tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 10px;
+  overflow: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.result-item .tags::-webkit-scrollbar {
+  display: none;
+}
+.result-item .tags span {
+  padding: 7px;
+  margin: 3px 5px;
+  border-radius: 4px;
+  background: linear-gradient(315deg, #b9afcc, #dbd0f3);
+  box-shadow: -5px -5px 14px #aea5c1, 5px 5px 14px #ecdfff;
+  word-break: pre-wrap;
 }
 
 #emoji-wrapper {
@@ -84,7 +189,7 @@ div.input-wrapper input {
 .sentiment-stats {
   display: flex;
   flex-direction: column;
-  margin: 2rem auto;
+  margin: 3rem auto 2rem;
   padding: 1rem;
   background: #fafafa;
   border-radius: 5px;

@@ -1,9 +1,16 @@
 import React from "react";
-import ResultItem from "../ResultItem.js";
+import ResultItem from "../ResultItem";
 
 const ResultsRenderer = ({ results = [] }) => {
   const getResultItems = () => {
-    if (!results || !Array.isArray(results) || !results.length) {
+    if (!results) {
+      return (
+        <span id="no-results" role="img" aria-label={"no results"}>
+          Try searching, "Love in the air!" 😉
+        </span>
+      );
+    }
+    if (Array.isArray(results) && !results.length) {
       return (
         <span id="no-results" role="img" aria-label={"no results"}>
           🤕 Nothing relevant found!!! Try something else.
