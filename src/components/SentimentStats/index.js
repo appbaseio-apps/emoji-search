@@ -1,6 +1,10 @@
 import React from "react";
 
 const SentimentStats = ({ sentimentData }) => {
+  if (!Array.isArray(sentimentData) || sentimentData.length === 0) {
+    return null;
+  }
+
   return (
     <div className="sentiment-stats">
       {sentimentData?.map((sentimentObject) => (
