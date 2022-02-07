@@ -15,6 +15,7 @@ const App = () => {
   const [searchText, setSearchText] = useState("");
   const [isSearching, setIsSearching] = useState(false);
   const [results, setResults] = useState(null);
+  const [sentimentData, setSentimentData] = useState([]);
   const currentSelectedRandomText = useRef("");
 
   const makeApiCall = () => {
@@ -36,6 +37,7 @@ const App = () => {
       .then(function (res) {
         setIsSearching(false);
         setResults(res[SEARCH_ID].hits.hits);
+        setSentimentData(res.analysis);
       })
       .catch(function (err) {
         console.log("search error: ", err);
@@ -98,7 +100,7 @@ const App = () => {
           Generate Random Text
         </button>
       </div>
-      <SentimentStats />
+      <SentimentStats sentimentData={sentimentData} />
       <div className="result-wrapper">
         <ResultsRenderer results={results} />
       </div>
