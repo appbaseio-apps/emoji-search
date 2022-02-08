@@ -13,11 +13,16 @@ var appbaseRef = appbasejs({
 
 const App = () => {
   const [searchText, setSearchText] = useState("");
+  // indicates whether api has responded or not
   const [isSearching, setIsSearching] = useState(false);
+  // keeping record of the fetched results
   const [results, setResults] = useState(null);
+  // keep record of sentiment analysis data
   const [sentimentData, setSentimentData] = useState([]);
+  // holds currently generated random text
   const currentSelectedRandomText = useRef("");
 
+  // function to make the search api call to the backend
   const makeApiCall = () => {
     setIsSearching(true);
     const SEARCH_ID = "emoji_search";
@@ -44,6 +49,7 @@ const App = () => {
       });
   };
 
+  // random text generator funciton
   const generateRandomText = () => {
     const randomTextArray = [
       "Home is the best place to rest.",
@@ -84,6 +90,7 @@ const App = () => {
           </a>
         </div>
       </header>
+      {/* loader overlay */}
       {isSearching && <div className="loader-overlay">Searching...</div>}
       <div className="input-wrapper">
         <input
@@ -96,6 +103,7 @@ const App = () => {
         <button id="recommend-btn" onClick={makeApiCall}>
           Recommend
         </button>
+        {/* button to generate random text */}
         <button id="random-text-btn" onClick={generateRandomText}>
           Generate Random Text
         </button>

@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  font-family: monospace;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  font-family: monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 1rem;
+  height: 100vh;
+  width: 100%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+div#root {
+  height: 100%;
+  width: 100%;
+}
+
+/* index.js */
+
+div.input-wrapper {
+  position: relative;
+  width: max-content;
+  margin: 0 auto;
+  display: flex;
+  align-items: stretch;
+}
+
+div.input-wrapper input {
+  height: 2.5rem;
+  font-size: 1.5rem;
+  min-width: 250px;
+  max-width: 600px;
+  width: 100vw;
+  padding-left: 0.6rem;
+}
+
+div.input-wrapper #recommend-btn {
+  border: none;
+  background: #00800a;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+div.input-wrapper #recommend-btn:hover {
+  filter: brightness(110%);
+}
+
+div.input-wrapper #recommend-btn:active {
+  filter: brightness(120%);
+}
