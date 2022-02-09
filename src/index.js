@@ -75,13 +75,7 @@ const App = () => {
     <div className="app-root">
       <header>
         <div className="logo-wrapper">
-          <a href="http://www.appbase.io/" target="_blank" rel="noreferrer">
-            {" "}
-            <img
-              src="https://softr-prod.imgix.net/applications/d919d2ef-4bb1-4b91-aa55-6040ea8667e1/assets/f7a75f17-313d-4759-992f-e7d351a11836.svg"
-              alt="appbase-logo"
-            />
-          </a>
+          <h1>Emoji Search 💫 </h1>
         </div>
         <div className="link-wrapper">
           <a href="http://www.appbase.io/" target="_blank" rel="noreferrer">
@@ -91,7 +85,7 @@ const App = () => {
         </div>
       </header>
       {/* loader overlay */}
-      {isSearching && <div className="loader-overlay">Searching...</div>}
+      {isSearching && <div className="loader-overlay">Loading...</div>}
       <div className="input-wrapper">
         <input
           name="search-field"

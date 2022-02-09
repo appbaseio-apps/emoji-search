@@ -14,6 +14,7 @@ body {
   padding: 1rem;
   height: 100vh;
   width: 100%;
+  color: #6f73d2;
 }
 
 code {
@@ -49,21 +50,21 @@ header {
   margin-bottom: 3rem;
 }
 
-.logo-wrapper img {
-  height: 40px;
-  position: relative;
-  top: 5px;
+.logo-wrapper h1 {
+  font-size: 2rem;
+  margin: 0;
 }
 
 .link-wrapper a {
   text-decoration: none;
   font-size: 20px;
+  color: #6f73d2;
 }
 
 div.input-wrapper {
   position: relative;
   width: max-content;
-  margin: 0 auto;
+  margin: 72px auto 0;
   display: flex;
   align-items: stretch;
   max-width: 100%;
@@ -80,8 +81,8 @@ div.input-wrapper input {
 
 div.input-wrapper #recommend-btn {
   border: none;
-  background: #00800a;
-  color: white;
+  background: #6f73d2;
+  color: #d9f0ff;
   text-transform: uppercase;
   font-weight: 600;
   cursor: pointer;
@@ -98,12 +99,12 @@ div.input-wrapper #recommend-btn:active {
 
 div.input-wrapper #random-text-btn {
   position: absolute;
-  top: 118%;
-  right: 0;
+  top: -96%;
+  left: 0;
   border: none;
   padding: 5px 10px;
-  background: #7bbedf;
-  color: #121212;
+  background: #d9f0fe;
+  color: #6f73d2;
   text-transform: uppercase;
   font-weight: 600;
   cursor: pointer;
@@ -139,7 +140,7 @@ div.input-wrapper #random-text-btn:active {
   flex-direction: column;
   width: 250px;
   height: 350px;
-  background: #cdc2e3;
+  background: #d9f0ff;
   box-shadow: -1px 0 8px #000;
   transition: all 450ms ease;
   cursor: pointer;
@@ -175,10 +176,11 @@ div.input-wrapper #random-text-btn:active {
 .result-item .tags span {
   padding: 7px;
   margin: 3px 5px;
-  border-radius: 4px;
-  background: linear-gradient(315deg, #b9afcc, #dbd0f3);
-  box-shadow: -5px -5px 14px #aea5c1, 5px 5px 14px #ecdfff;
   word-break: pre-wrap;
+  border-radius: 7px;
+  background: #c5e0f7;
+  box-shadow: inset 4px 4px 7px #9cb1c3, inset -4px -4px 7px #eeffff;
+  color: #5f65f3;
 }
 
 #emoji-wrapper {
@@ -192,7 +194,7 @@ div.input-wrapper #random-text-btn:active {
   flex-direction: column;
   margin: 3rem auto 2rem;
   padding: 1rem;
-  background: #fafafa;
+  background: #d9f0ff42;
   border-radius: 5px;
 }
 
