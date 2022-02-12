@@ -55,14 +55,15 @@ const App = () => {
   // random text generator funciton
   const generateRandomText = () => {
     const randomTextArray = [
-      "Home is the best place to rest.",
+      "Home is the best place to rest",
       "money is awesome but not everything",
-      "Slow and steady wins the race.",
-      "Loves twitter",
+      "Slow and steady wins the race",
+      "I'm feeling the winter blues",
       "omg so bored & my tattoooos are so itchy!!  help! aha =)",
       "just got back from church, and I totally hate insects.",
       "Sports bikes are fun and interesting",
-      "Taking Katie to see Night at the Museum.  (she picked it)",
+      "Taking Katie to see Night at the Museum",
+      "I love watching the sunset from the mountains",
       "Men do cry, but with attitude",
     ];
     let textIndex = Math.floor(Math.random() * 10);
