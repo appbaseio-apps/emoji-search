@@ -46,6 +46,9 @@ const App = () => {
       })
       .catch(function (err) {
         console.log("search error: ", err);
+        setIsSearching(false);
+        setResults([]);
+        setSentimentData([]);
       });
   };
 
