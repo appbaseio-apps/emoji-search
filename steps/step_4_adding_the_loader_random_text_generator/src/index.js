@@ -24,6 +24,8 @@ const App = () => {
   const [sentimentData, setSentimentData] = useState([]);
   // holds currently generated random text
   const currentSelectedRandomText = useRef("");
+  // holds time taken by script
+  const [scriptTime, setScriptTime] = useState(0);
 
   // makes a call to the backend to fetch results
   const makeApiCall = () => {
@@ -46,9 +48,14 @@ const App = () => {
         setIsSearching(false);
         setResults(res[SEARCH_ID].hits.hits);
         setSentimentData(res.analysis);
+        setScriptTime(res?.settings?.script_took ?? 0);
       })
       .catch(function (err) {
         console.log("search error: ", err);
+        setIsSearching(false);
+        setResults([]);
+        setSentimentData([]);
+        setScriptTime(0);
       });
   };
 
@@ -95,7 +102,7 @@ const App = () => {
           Generate Random Text
         </button>
       </div>
-      <SentimentStats sentimentData={sentimentData} />
+      <SentimentStats sentimentData={sentimentData} scriptTime={scriptTime} />
       <div className="result-wrapper">
         <ResultsRenderer results={results} />
       </div>

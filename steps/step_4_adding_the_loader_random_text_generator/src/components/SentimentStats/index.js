@@ -1,6 +1,6 @@
 import React from "react";
 
-const SentimentStats = ({ sentimentData }) => {
+const SentimentStats = ({ sentimentData, scriptTime }) => {
   if (!Array.isArray(sentimentData) || sentimentData.length === 0) {
     return null;
   }
@@ -88,7 +88,7 @@ const SentimentStats = ({ sentimentData }) => {
             })}
           </div>
           <div className="sentiment-sentence__time-taken">
-            Total time: {sentimentObject.time} milliseconds
+            Total time: {scriptTime} milliseconds
           </div>
         </div>
       ))}
