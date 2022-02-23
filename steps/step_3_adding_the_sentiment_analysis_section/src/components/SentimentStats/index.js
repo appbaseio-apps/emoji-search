@@ -87,11 +87,11 @@ const SentimentStats = ({ sentimentData, scriptTime }) => {
               );
             })}
           </div>
-          <div className="sentiment-sentence__time-taken">
-            Total time: {scriptTime} milliseconds
-          </div>
         </div>
       ))}
+      <div className="sentiment-sentence__time-taken">
+        Total time: {scriptTime} milliseconds
+      </div>
     </div>
   );
 };
