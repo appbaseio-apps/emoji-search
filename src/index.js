@@ -52,6 +52,7 @@ const App = () => {
         setIsSearching(false);
         setResults([]);
         setSentimentData([]);
+        setScriptTime(0);
       });
   };
 
