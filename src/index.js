@@ -93,7 +93,11 @@ const App = () => {
         </div>
       </header>
       {/* loader overlay */}
-      {isSearching && <div className="loader-overlay">Loading...</div>}
+      {isSearching && (
+        <div className="loader-overlay">
+          <span>⌛</span>
+        </div>
+      )}
       <div className="input-wrapper">
         <input
           name="search-field"

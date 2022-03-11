@@ -85,7 +85,7 @@ const App = () => {
   return (
     <div className="app-root">
       {/* loader overlay */}
-      {isSearching && <div className="loader-overlay">Loading...</div>}
+      {isSearching && <div className="loader-overlay">⌛</div>}
       <div className="input-wrapper">
         <input
           name="search-field"

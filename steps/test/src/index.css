@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  font-family: monospace;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  font-family: monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 1rem;
+  height: 100vh;
+  width: 100%;
+  color: #6f73d2;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+#menuToggleBtn {
+  display: none;
+  width: 15px;
+  position: relative;
+  background: black;
+  height: 2px;
+  border: none;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+#menuToggleBtn::before {
+  height: 0px;
+  width: 13px;
+  border: 1px solid black;
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 0;
+}
+
+#menuToggleBtn::after {
+  height: 0px;
+  width: 13px;
+  border: 1px solid black;
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 0;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  border: 1px solid black;
+  width: max-content;
+  padding-left: 0;
+}
+
+li {
+}
+
+li a {
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+@media only screen and (max-width: 900px) {
+  #menuToggleBtn {
+    display: unset;
+  }
+
+  ul {
+    display: none;
+  }
+
+  .show ul {
+    display: block;
+  }
+}
