@@ -86,7 +86,7 @@ const App = () => {
           <h1>Emoji Search 💫 </h1>
         </div>
         <div className="link-wrapper">
-          <a href="http://www.appbase.io/" target="_blank" rel="noreferrer">
+          <a href="https://blog.reactivesearch.io/natural-language-search-app-with-react-and-elasticsearch" target="_blank" rel="noreferrer">
             {" "}
             🔗 View Blog
           </a>
